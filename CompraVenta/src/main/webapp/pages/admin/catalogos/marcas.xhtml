@@ -1,0 +1,59 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"  xmlns:p="http://primefaces.org/ui">
+    <body>
+        <ui:composition template="/templates/template.xhtml">            
+            <ui:define name="title">
+                <h:outputText value="#{msg['pagina.marcas.subtitulo']}"/>
+            </ui:define>
+            <ui:define name="body">
+                <h:form>
+                    <p:dataTable id="marcas" value="#{marcaController.listaMarcas}" var="marca" paginator="true" rows="10" 
+                                 selection="#{marcaController.currentMarca}">
+                        <f:facet name="header">
+                            <h:outputText value="#{msg['pagina.marcas.tabla']}"/>
+                        </f:facet>
+                        <p:column selectionMode="single"/>
+                        <p:column headerText="#{msg['pagina.marcas.tabla.id']}">
+                            <h:outputText value="#{marca.idMarca}"/>
+                        </p:column>
+                        <p:column headerText="#{msg['pagina.marcas.tabla.nombre']}">
+                            <h:outputText value="#{marca.nombre}"/>
+                        </p:column>
+                        <p:column headerText="#{msg['pagina.marcas.tabla.cmnt']}">
+                            <h:outputText value="#{marca.comentarios}"/>
+                        </p:column>
+                    </p:dataTable>
+                    <p:commandButton id="editBtn" type="button" value="#{msg['boton.acciones.editar']}" onclick="editarDlg.show()"
+                                     disabled="#{marcaController.currentMarca.idMarca == null ? true : false}"/>
+                    <p:commandButton id="nuevoBtn" type="button" value="#{msg['boton.acciones.alta']}" onclick="altaDlg.show()"/>
+                    <p:dialog header="#{msg['pagina.marcas.popup.editar']}" widgetVar="editarDlg" resizable="false">
+
+                        <h:panelGrid columns="2" style="margin-bottom:10px">
+                            <h:outputLabel for="nombreEdit" value="#{msg['pagina.marcas.tabla.nombre']}" />
+                            <p:inputText id="nombreEdit" value="#{marcaController.currentMarca.nombre}" />
+                            <h:outputLabel for="nombreEdit" value="#{msg['pagina.marcas.tabla.cmnt']}" />
+                            <p:inputText id="cmntEdit" value="#{marcaController.currentMarca.comentarios}" />
+                        </h:panelGrid>
+
+                        <p:commandButton id="submitEdit" action="#{marcaController.editMarca}" value="Submit" update="marcas" oncomplete="editarDlg.hide();"
+                                         />
+
+                    </p:dialog>
+                    <p:dialog header="#{msg['pagina.marcas.popup.alta']}" widgetVar="altaDlg" resizable="false">
+
+                        <h:panelGrid columns="2" style="margin-bottom:10px">
+                            <h:outputLabel for="nombreEdit" value="#{msg['pagina.marcas.tabla.nombre']}" />
+                            <p:inputText id="nombreAlta" value="#{marcaController.nuevaMarca.nombre}" />
+                            <h:outputLabel for="nombreEdit" value="#{msg['pagina.marcas.tabla.cmnt']}" />
+                            <p:inputText id="cmntAlta" value="#{marcaController.nuevaMarca.comentarios}" />
+                        </h:panelGrid>
+
+                        <p:commandButton id="submitAlta" action="#{marcaController.altaMarca}" value="Guardar" update="marcas" oncomplete="altaDlg.hide();"/>
+
+
+                    </p:dialog>
+                </h:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>

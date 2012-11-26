@@ -1,0 +1,74 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:sec="http://www.springframework.org/security/tags"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <title>#{msg['aplication.title']}</title>        
+        <link href="${pageContext.servletContext.contextPath}/CompraVenta/static/style.css" rel="stylesheet" type="text/css" media="screen" />
+    </h:head>
+    <h:body>
+        <div id="wrapper">
+            <div id="header">
+                <div id="logo">
+                    <h1><a href="${pageContext.servletContext.contextPath}/home.jsp">#{msg['aplication.title']}</a></h1>
+                </div>
+            </div>
+        </div>
+            <!-- end #header -->
+                        <h:form>
+                            <p:menubar>
+                                <p:menuitem value="#{msg['menu.inicio']}" action="#{navegacionController.goInicio}" icon="ui-icon-home" />  
+                                <p:submenu label="#{msg['menu.compra.venta']}">
+                                    <p:menuitem value="#{msg['menu.compra']}" action="#{navegacionController.goCompras}"/>
+                                    <p:menuitem value="#{msg['menu.venta']}" action="#{navegacionController.goVentas}"/>
+                                </p:submenu>
+                                <p:submenu label="#{msg['menu.reportes']}">
+                                    <p:menuitem value="#{msg['menu.reportes.compras']}" action="#{navegacionController.goReportesVentas}"/>
+                                    <p:menuitem value="#{msg['menu.reportes.ventas']}" action="#{navegacionController.goReportesCompras}"/>
+                                    <p:menuitem value="#{msg['menu.reportes.general']}" action="#{navegacionController.goReportesGeneral}"/>
+                                </p:submenu>
+                                <p:menuitem value="#{msg['menu.historico']}" action="#{navegacionController.goHistorico}" icon="ui-icon-clock" />  
+                                <p:submenu label="#{msg['menu.admin.catalogos']}">
+                                    <p:menuitem value="#{msg['menu.admin.catalogos.admin']}" action="#{navegacionController.goAdmin}" icon="ui-icon-person" /> 
+                                    <p:submenu label="#{msg['menu.admin.catalogos.autos']}">
+                                                <p:menuitem value="#{msg['menu.admin.catalogos.marcas']}" action="#{navegacionController.goCatMarcas}" /> 
+                                                <p:menuitem value="#{msg['menu.admin.catalogos.submarcas']}" action="#{navegacionController.goAdmin}" /> 
+                                    </p:submenu>
+                            
+                                </p:submenu>
+                                
+                            </p:menubar>
+                        </h:form>
+            <!-- end #menu -->
+            <div id="wrapper2">
+            <div id="page">
+                <div id="page-bgtop">
+                    <div id="page-bgbtm">
+                        <div id="content">
+                            <div class="post">
+                                <p:growl id="messages"/>
+                                <h2 class="title"><a href="#"><ui:insert name="title">Default content</ui:insert> </a></h2>                                
+                                <div style="clear: both;">&#160;</div>
+                                <div class="entry">
+                                    <ui:insert name="body">Default content</ui:insert>
+                                </div>
+                            </div>						
+                            <div style="clear: both;">&#160;</div>
+                        </div>
+                        <!-- end #content -->                      
+                        <div style="clear: both;">&#160;</div>
+                    </div>
+                </div>
+            </div>
+            <!-- end #page -->
+        </div>
+        <div id="footer">
+            <p>#{msg['aplication.copyright']} #{msg['aplication.designed.by']} <a href="#{msg['aplication.developer.page']}">#{msg['aplication.developer']}</a>.</p>
+        </div>
+        <!-- end #footer -->
+    </h:body>
+</html>

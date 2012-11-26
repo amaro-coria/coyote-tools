@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+    <!--
+    <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+    <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/coyote_db?zeroDateTimeBehavior=convertToNull</property>
+    <property name="hibernate.connection.username">coyote</property>
+    <property name="hibernate.connection.password">coyote</property>
+    <mapping class="com.compraventa.persistencia.dominio.CompradoresVendedores"/>
+    <mapping class="com.compraventa.persistencia.dominio.Submarcas"/>
+    <mapping class="com.compraventa.persistencia.dominio.Submarcas"/>
+    <mapping class="com.compraventa.persistencia.dominio.Conceptos"/>
+    <mapping class="com.compraventa.persistencia.dominio.Localidades"/>
+    <mapping class="com.compraventa.persistencia.dominio.Marcas"/>
+    <mapping class="com.compraventa.persistencia.dominio.CompraVentas"/>
+    <mapping class="com.compraventa.persistencia.dominio.CompradoresVendedores"/>
+    <mapping class="com.compraventa.persistencia.dominio.Estados"/>
+    <mapping class="com.compraventa.persistencia.dominio.Municipios"/>
+    <mapping class="com.compraventa.persistencia.dominio.TxCompraVentas"/>
+    <mapping class="com.compraventa.persistencia.dominio.RolesUsuario"/>
+    <mapping class="com.compraventa.persistencia.dominio.Usuarios"/>
+    <mapping class="com.compraventa.persistencia.dominio.Historicos"/>
+    <mapping class="com.compraventa.persistencia.dominio.Roles"/>
+    <mapping class="com.compraventa.persistencia.dominio.Submarcas"/>
+    <mapping class="com.compraventa.persistencia.dominio.Conceptos"/>
+    <mapping class="com.compraventa.persistencia.dominio.Localidades"/>
+    <mapping class="com.compraventa.persistencia.dominio.Marcas"/>
+    <mapping class="com.compraventa.persistencia.dominio.CompraVentas"/>
+    <mapping class="com.compraventa.persistencia.dominio.CompradoresVendedores"/>
+    <mapping class="com.compraventa.persistencia.dominio.Estados"/>
+    <mapping class="com.compraventa.persistencia.dominio.Municipios"/>
+    <mapping class="com.compraventa.persistencia.dominio.TxCompraVentas"/>
+    <mapping class="com.compraventa.persistencia.dominio.Historicos"/>
+    <mapping class="com.compraventa.persistencia.dominio.Usuarios"/>
+    <mapping class="com.compraventa.persistencia.dominio.RolesUsuario"/>
+    <mapping class="com.compraventa.persistencia.dominio.Roles"/>
+    -->
+  </session-factory>
+</hibernate-configuration>

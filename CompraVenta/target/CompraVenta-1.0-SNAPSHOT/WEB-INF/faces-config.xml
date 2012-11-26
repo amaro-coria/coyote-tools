@@ -1,0 +1,49 @@
+<?xml version='1.0' encoding='UTF-8'?>
+
+<faces-config version="2.1"
+              xmlns="http://java.sun.com/xml/ns/javaee"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_1.xsd">
+        
+    <application>
+      <el-resolver>org.springframework.web.jsf.el.SpringBeanFacesELResolver</el-resolver>  
+       <resource-bundle>
+            <base-name>resources.messages</base-name>
+            <var>msg</var>
+        </resource-bundle>
+        <locale-config>            
+            <default-locale>es</default-locale>            
+        </locale-config>     
+    </application>
+        
+    <navigation-rule>
+        <navigation-case>
+            <from-outcome>goInicio</from-outcome>
+            <to-view-id>/faces/pages/home.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goCompras</from-outcome>
+            <to-view-id>/faces/pages/compras.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goVentas</from-outcome>
+            <to-view-id>/faces/pages/ventas.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goReportes</from-outcome>
+            <to-view-id>/faces/pages/reportes.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goHistorico</from-outcome>
+            <to-view-id>/faces/pages/historico.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goAdmin</from-outcome>
+            <to-view-id>/faces/pages/admin/administracion.xhtml</to-view-id>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>goCatMarcas</from-outcome>
+            <to-view-id>/faces/pages/admin/catalogos/marcas.xhtml</to-view-id>
+        </navigation-case>
+    </navigation-rule>
+</faces-config>
